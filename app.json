@@ -1,25 +1,48 @@
 {
   "expo": {
-    "name": "nature-explorer",
+    "name": "Nature Explorer",
     "slug": "nature-explorer",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
+    "scheme": "nature-explorer",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.natureexplorer.app"
     },
     "android": {
+      "package": "com.natureexplorer.app",
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
-        "foregroundImage": "./assets/android-icon-foreground.png",
-        "backgroundImage": "./assets/android-icon-background.png",
-        "monochromeImage": "./assets/android-icon-monochrome.png"
-      },
-      "predictiveBackGestureEnabled": false
+        "backgroundColor": "#2D6A4F",
+        "foregroundImage": "./assets/icon.png"
+      }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro",
+      "output": "single",
+      "name": "Nature Explorer",
+      "shortName": "Nature",
+      "description": "Explore nature in your neighbourhood",
+      "backgroundColor": "#ffffff",
+      "themeColor": "#2D6A4F"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow Nature Explorer to use your location to find nearby nature objects."
+        }
+      ],
+      "expo-font",
+      "expo-asset",
+      "expo-splash-screen",
+      "expo-head"
+    ],
+    "experiments": {
+      "typedRoutes": true
     }
   }
 }
